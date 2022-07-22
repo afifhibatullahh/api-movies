@@ -24,4 +24,16 @@ class ModelUser extends Model
             'required' => 'Silahkan masukan password'
         ]
     ];
+
+    function getUsername($username)
+    {
+        $builder = $this->table('user');
+        $data = $builder->where('username', $username)->first();
+
+        if (!$data) {
+            throw new Exception("Data authentikasi tidak ditemukan");
+        }
+
+        return $data;
+    }
 }
