@@ -31,7 +31,7 @@ function createJWT($username)
         'exp' => $waktuExpired
     ];
 
-    $jwt = JWT::encode($payload, getenv('JWT_SECRET_KEY'));
+    $jwt = JWT::encode($payload, getenv('JWT_SECRET_KEY'), 'HS256');
 
     return $jwt;
 }
