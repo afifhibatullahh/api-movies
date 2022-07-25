@@ -16,7 +16,7 @@ class Film extends BaseController
 
     public function index()
     {
-        $data = $this->film->orderBy('judul', 'asc')->findAll();
+        $data = $this->film->orderBy('judul', 'asc')->findAll(10);
         return $this->respond($data, 200);
     }
 
