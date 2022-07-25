@@ -14,6 +14,16 @@ class Film extends BaseController
         $this->film = new ModelFilm();
     }
 
+    public function search($param)
+    {
+        $data = $this->film->like('judul', $param)->orLike('category', $param)->findAll();
+        if ($data) {
+            return $this->respond($data, 200);
+        } else {
+            return $this->failNotFound("Data Film tidak ada");
+        }
+    }
+
     public function index()
     {
         $data = $this->film->orderBy('judul', 'asc')->findAll(10);
