@@ -8,7 +8,8 @@
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
         "fakerphp/faker": "^1.20",
-        "firebase/php-jwt": "^6.3"
+        "firebase/php-jwt": "^6.3",
+        "xylis/faker-cinema-providers": "^2.0"
     },
     "require-dev": {
         "mikey179/vfsstream": "^1.6",

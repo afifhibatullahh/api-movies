@@ -16,7 +16,7 @@ class Film extends BaseController
 
     public function search($param)
     {
-        $data = $this->film->like('judul', $param)->orLike('category', $param)->findAll();
+        $data = $this->film->like('judul', $param)->orLike('genre', $param)->findAll();
         if ($data) {
             return $this->respond($data, 200);
         } else {
@@ -26,7 +26,7 @@ class Film extends BaseController
 
     public function index()
     {
-        $data = $this->film->orderBy('judul', 'asc')->findAll(10);
+        $data = $this->film->orderBy('rand()')->findAll(10);
         return $this->respond($data, 200);
     }
 
